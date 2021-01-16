@@ -8,5 +8,11 @@ export default StyleSheet.create({
         padding: Metrics.md,
         borderRadius: 10,
         margin: Metrics.rg
+    },
+    image: {
+        width: undefined,
+        height: 150,
+        marginBottom: Metrics.sm,
+        resizeMode: 'cover'
     }
 })

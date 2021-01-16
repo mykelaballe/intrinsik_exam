@@ -1,6 +1,7 @@
 export ActivityIndicator from './ActivityIndicator'
 export Button from './Button'
 export ButtonText from './ButtonText'
+export HR from './HR'
 export Row from './Row'
 export Screen from './Screen'
 export Spacer from './Spacer'

@@ -1005,7 +1005,7 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@react-native-async-storage/async-storage@^1.13.2":
+"@react-native-async-storage/async-storage@1.13.2":
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.13.2.tgz#649f78527f16cd5a87071a888219ef7a35ef5c79"
   integrity sha512-isTDvUApRJPVWFxV15yrQSOGqarX7cIedq/y4N5yWSnotf68D9qvDEv1I7rCXhkBDi0u4OJt6GA9dksUT0D3wg==
@@ -5879,6 +5879,11 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-native-document-picker@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-document-picker/-/react-native-document-picker-4.2.0.tgz#2d6f560fd902c5f9034c287941a9505f037b6eeb"
+  integrity sha512-bZlQ3ooOO+2G0J0vSvcWWv1OojMwhEhiF5M7gCKp3LT/VPikZnmzIGgCkhcu8HexxWLuaGToSAQAUL2VcSo5oQ==
 
 react-native-gesture-handler@1.9.0:
   version "1.9.0"
