@@ -1,20 +1,35 @@
 import {takeLatest, put, call, select} from 'redux-saga/effects'
 import Actions from '@actions'
-import * as API from '@api'
+import database from '@react-native-firebase/database'
+import moment from 'moment'
 
 function * get() {
     try {
-        //const res = yield call(API.getConversation)
+        /*const dbRef = database().ref('conversation')
 
-        if(true || res.status == 200) {
-            yield put(Actions.Creators.setConversation([
-                {
-                    email: 'anotheruser@example.com',
-                    message: 'Hi, Good Morning!',
-                    timestamp: '2021-01-15 10:30:00'
+        const data = yield call(dbRef.once, 'value')
+
+        console.log(data)*/
+
+        /*.on('value', snapshot => {
+            let messages = []
+
+            if(snapshot) {
+
+                const snapShotVal = snapshot.val()
+
+                for(let s in snapShotVal) {
+                    messages.push({
+                        id: s,
+                        message: snapShotVal[s].message,
+                        timestamp: snapShotVal[s].timestamp,
+                        email: snapShotVal[s].email
+                    })
                 }
-            ]))
-        }
+            }
+
+            yield put(Actions.Creators.setConversation(messages))
+        })*/
     }
     catch(err) {
         alert(err)
@@ -27,18 +42,15 @@ function * send({payload}) {
     try {
         const state = yield select()
 
-        //const res = yield call(API.getConversation)
+        const newReference = database().ref('conversation').push()
 
-        if(true || res.status == 200) {
-            let conversation = [...state.conversation.list]
-
-            conversation.push({
-                ...payload,
-                email: state.user.data.email
-            })
-
-            yield put(Actions.Creators.setConversation(conversation))
-        }
+        newReference
+        .set({
+            name: state.user.data.name,
+            email: state.user.data.email,
+            timestamp: moment().format('YYYY-MM-DD HH:mm:ss'),
+            ...payload
+        })
     }
     catch(err) {
         alert(err)

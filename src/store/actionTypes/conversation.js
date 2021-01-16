@@ -4,5 +4,7 @@ export default {
 
     setConversation: ['list'],
 
-    attemptSendMessage: ['payload']
+    attemptSendMessage: ['payload'],
+
+    addToConversation: ['message']
 }

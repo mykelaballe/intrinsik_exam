@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412508226885",
+    "project_id": "intrinsik-276d0",
+    "storage_bucket": "intrinsik-276d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412508226885:android:b972628f4a3b9d82d7ea2c",
+        "android_client_info": {
+          "package_name": "com.intrinsik_exam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412508226885-bmacjmgtlikht2pcvuirc8viso6l129n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe7To9tuGAr9XzVZlPFL46-lmruRCS_lQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412508226885-bmacjmgtlikht2pcvuirc8viso6l129n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -12,8 +12,7 @@ function * login({payload: {email, password}}) {
             const res = yield call(API.login, {email, password})
 
             if(res.status == 200) {
-                const userData = {
-                    name: 'Mykel Aballe',
+                let userData = {
                     email,
                     token: res.data.token
                 }
@@ -25,7 +24,10 @@ function * login({payload: {email, password}}) {
 
                 if(users) {
                     users.map(u => {
-                        if(u.email == email) accountExists = true
+                        if(u.email == email) {
+                            userData.name = u.name
+                            accountExists = true
+                        }
                     })
                 }
                 

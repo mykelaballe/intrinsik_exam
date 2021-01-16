@@ -26,7 +26,7 @@ export default () => {
                 name={Routes.conversation}
                 component={Scrn.Conversation}
                 options={{
-                    title: data.name,
+                    title: 'Conversation',
                     headerRight: () => <IconButton color={Colors.primary} icon='logout' onPress={handleLogout} />
                 }}
             />

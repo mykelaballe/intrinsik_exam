@@ -11,6 +11,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import Actions from '@actions'
 import DocumentPicker from 'react-native-document-picker'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import database from '@react-native-firebase/database'
 
 export default () => {
 
@@ -24,6 +25,46 @@ export default () => {
 
     useEffect(() => {
         dispatch({type: Actions.Types.ATTEMPT_GET_CONVERSATION})
+    },[])
+
+    useEffect(() => {
+        database()
+        .ref('conversation')
+        .on('value', snapshot => {
+
+            const snapShotVal = snapshot.val()
+
+            console.log('ONE!!!\n\n', snapShotVal)
+
+            let snapShotMessages = []
+
+            for(let s in snapShotVal) {
+                snapShotMessages.unshift({
+                    id: s,
+                    ...snapShotVal[s]
+                })
+            }
+
+            snapShotMessages.sort(function(a, b) {
+                return moment(a.timestamp).isAfter(moment(b.timestamp))
+            })
+
+            console.log('TWO!!!\n\n', snapShotMessages)
+
+            dispatch({
+                type: Actions.Types.SET_CONVERSATION,
+                list: snapShotMessages
+            })
+
+            /*dispatch({
+                type: Actions.Types.ADD_TO_CONVERSATION,
+                message: {
+                    email: 'mykel',
+                    message: '123',
+                    timestamp: moment().format('YYYY-MM-DD HH:mm:ss')
+                }
+            })*/
+        })
     },[])
 
     const handleChangeMessage = text => setMessage(text)
@@ -73,8 +114,7 @@ export default () => {
                 type: Actions.Types.ATTEMPT_SEND_MESSAGE,
                 payload: {
                     message,
-                    file,
-                    timestamp: moment().format('YYYY-MM-DD HH:mm:ss')
+                    file
                 }
             })
         }

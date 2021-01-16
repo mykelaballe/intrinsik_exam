@@ -58,6 +58,7 @@ export default () => {
                     value={email}
                     onChangeText={handleChangeEmail}
                     keyboardType='email-address'
+                    autoCapitalize='none'
                 />
 
                 <Spacer sm />

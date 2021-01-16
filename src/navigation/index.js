@@ -11,7 +11,7 @@ export default () => {
 
     return (
         <NavigationContainer ref={ref => setNavigator(ref)}>
-            {isLoggedIn || true ? <HomeStack /> : <AuthStack />}
+            {isLoggedIn ? <HomeStack /> : <AuthStack />}
         </NavigationContainer>
     )
 }
